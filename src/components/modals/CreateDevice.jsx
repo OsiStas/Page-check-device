@@ -10,7 +10,7 @@ const CreateDevice = ({ show, onHide }) => {
     setInfo([...info, { title: '', description: '', number: Date.now() }]);
   };
   const removeInfo = (number) => {
-    removeInfo(info.filter((i) => i.number !== number));
+    setInfo(info.filter((i) => i.number !== number));
   };
 
   return (

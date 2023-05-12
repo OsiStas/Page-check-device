@@ -5,6 +5,9 @@ import UserStore from './store/UserStore';
 import DeviceStore from './store/DeviceStore';
 
 export const Context = createContext(null)
+console.log('====================================');
+console.log(process.env.REACT_APP_API_URL);
+console.log('====================================');
 
 const root = createRoot(document.getElementById('root'))
 
