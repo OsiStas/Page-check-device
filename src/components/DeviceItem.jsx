@@ -9,7 +9,7 @@ const DeviceItem = ({ device }) => {
   return (
     <Col md={3} className='mt-3' onClick={() => navigate(DEVICET_ROUTE + '/' + device.id)}>
       <Card style={{ width: 150, cursor: 'pointer' }} border={'light'}>
-        <Image width={150} height={150} src={device.img} />
+        <Image width={150} height={150} src={process.env.RACT_APP_API_URL + device.img} />
         <div className="text-black-50 ms-1 d-flex justify-content-between aling-items-center">
           <div>Samsung...</div>
           <div className="d-flex aling-items-center">
