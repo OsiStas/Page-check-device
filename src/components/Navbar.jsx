@@ -9,6 +9,12 @@ import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from '../utils/consts';
 const NavBar = observer(() => {
   const { user } = useContext(Context);
   const navigate = useNavigate();
+
+  const logOut = () => {
+    user.setUser({});
+    user.setIsAuth(false);
+  };
+
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
@@ -17,13 +23,16 @@ const NavBar = observer(() => {
         </Link>
         {user.isAuth ? (
           <Nav className="ms-auto" style={{ color: 'white' }}>
-            <Button variant={'outline-light'} onClick={() => navigate(ADMIN_ROUTE)}>
+            <Button
+              variant={'outline-light'}
+              onClick={() => navigate(ADMIN_ROUTE)}
+            >
               Админ панель
             </Button>
             <Button
               variant={'outline-light'}
               className="ms-2"
-              onClick={() => navigate(LOGIN_ROUTE)}
+              onClick={() => logOut() }
             >
               Вийти
             </Button>
@@ -33,7 +42,7 @@ const NavBar = observer(() => {
             <Button
               variant={'outline-light'}
               className="ms-2"
-              onClick={() => user.setIsAuth(true)}
+              onClick={() => navigate(LOGIN_ROUTE)}
             >
               Авторизація
             </Button>
