@@ -59,7 +59,7 @@ const DevicePage = () => {
         <h1>Характеристикі</h1>
         {device.info.map((info, index) => (
           <Row
-            key={info.id}
+            key={info?.id}
             style={{
               background: index % 2 === 0 ? 'lightgray' : 'transparent',
               padding: 10,

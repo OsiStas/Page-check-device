@@ -23,7 +23,7 @@ const CreateType = ({ show, onHide }) => {
           <Form.Control
             value={value}
             onChange={(e) => setValue(e.target.value)}
-            placeholder={'Впишіть назву тупа'}
+            placeholder={'Впишіть назву типа'}
           />
         </Form>
       </Modal.Body>
